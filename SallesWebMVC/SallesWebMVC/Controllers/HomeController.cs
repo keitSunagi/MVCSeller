@@ -15,6 +15,7 @@ namespace SallesWebMVC.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
