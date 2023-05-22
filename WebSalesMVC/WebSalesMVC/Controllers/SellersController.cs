@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebSalesMVC.Models;
 using WebSalesMVC.Services;
 
 namespace WebSalesMVC.Controllers
@@ -7,7 +8,7 @@ namespace WebSalesMVC.Controllers
     {
         private readonly SellersService _service;
 
-        public SellersController (SellersService service)
+        public SellersController(SellersService service)
         {
             _service = service;
         }
@@ -16,6 +17,17 @@ namespace WebSalesMVC.Controllers
         {
             var list = _service.FindAll();
             return View(list);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([Bind("Id,Name,Email,BirthDate")] Seller seller)
+        {
+            _service.Insert(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

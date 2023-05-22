@@ -19,14 +19,14 @@ namespace WebSalesMVC.Models
 
         }
 
-        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
+        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary)
         {
             Id = id;
             Name = name;
             Email = email;
             BirthDate = birthDate;
             BaseSalary = baseSalary;
-            Department = department;
+            Department = new Department(3,"Test");
         }
         public void AddSales(SalesRecord sales)
         {

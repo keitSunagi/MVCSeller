@@ -19,7 +19,7 @@ namespace WebSalesMVC.Data
             Department d2 = new Department(2, "Eletronics");
             Department d3 = new Department(3, "Books");
 
-            Seller s1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1996, 08, 14), 2093.00, d1);
+            Seller s1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1996, 08, 14), 2093.00);
 
             SalesRecord c1 = new SalesRecord(1, new DateTime(2023, 05, 22), 5800.00, Models.Enums.SaleStatus.Billed, s1);
 
