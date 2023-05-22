@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebSalesMVC.Data;
+using WebSalesMVC.Services;
+
 namespace WebSalesMVC
 {
     public class Program
@@ -16,6 +18,8 @@ namespace WebSalesMVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<SeedingService>();
+            builder.Services.AddScoped<SellersService>();
+
 
             var app = builder.Build();
 
